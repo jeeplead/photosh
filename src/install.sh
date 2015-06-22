@@ -92,8 +92,8 @@ rm -f /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/photoshow /etc/nginx/sites-enabled/photoshow
 
 # HR Design Changes to Web Interface
-mv /root/ps/inc/ /var/www/PhotoShow/inc/stylesheets/
-mv /root/ps/src/ /var/www/PhotoShow/src/stylesheets/
+mv /root/inc/ /var/www/PhotoShow/inc/stylesheets/
+mv /root/src/ /var/www/PhotoShow/src/stylesheets/
 
 
 # fix up startup files
