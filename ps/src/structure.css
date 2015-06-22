@@ -73,12 +73,13 @@ span#logo{
 	border-bottom: 1px solid #e0e0e0;
 	display: block;
 	margin: auto;
-	padding: 0 24px 0 24px;
+	padding: 0 24px 0 4px;
 	position: relative;
 	line-height:64px;
-	font-size: 24px;
+	font-size: 20px;
 	height: 60px;
 	overflow: hidden;
+	color: #666666;
 }
 
 div#menuright-header{
@@ -89,7 +90,7 @@ div#menuright-header{
 	position: relative;
 	height: 50px;
 	text-align: center;
-	background: #26a69a;
+	background: #B30000;
 }
 
 /* Header */
@@ -99,7 +100,7 @@ div#menuright-header{
 	overflow:hidden;
     font-family: "Roboto-Regular", sans-serif;
     margin: 0 auto;
-    background-color: #00bcd4;
+    background-color: #3E3E3E;
     height: 60px;
     box-shadow: 0 2px 5px rgba(0,0,0,.26);
 }
@@ -153,7 +154,7 @@ div.panel > .line {
 
 div.directory {
 	position: relative;
-	margin: 2px;
+	
 }
 
 div.directory .dirname
@@ -161,19 +162,29 @@ div.directory .dirname
 	display: block;
 	position: absolute;
 	bottom: 0;
+	
+	
+font-size: 10px;
+	padding: 4px;
+	/* 
+	min-height: 20px; 
 	text-align: center;
-	padding: 5px;
-	min-height: 20px;
+	
+	*/
 	word-wrap: break-word;
-	background: #00897b;
+	background: #3E3E3E;
 	left: 0;
 	right: 0;
 	color: white;
+	text-decoration: none;
+	
 }
 
 div.directory img{
 	width:100%;
+	/*
 	max-height: 150px;
+	*/
 }
 
 /* Linear Panel */
@@ -337,9 +348,10 @@ li {
 }
 
 .pure-menu li a{
-	font-family: 'Roboto-Bold',sans-serif;
-	font-size: 13px;
-	color: black;
+	font-family: 'arial',sans-serif;
+	font-size: 11px;
+	color: #5D5C5C;
+	border-bottom: 1px solid #D2D2D2;
 }
 
 li.currentSelected{
@@ -371,7 +383,7 @@ div.infos_img > div.infos_title {
 	font-family: "Roboto-Regular", sans-serif;
     font-size: 14px;
     font-weight: 400;
-	background: #00796b;
+	background: #666666;
 	color: white;
 	padding: 10px 10px 30px 10px;
 

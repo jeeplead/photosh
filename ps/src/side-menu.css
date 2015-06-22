@@ -204,7 +204,10 @@ This is the parent `<div>` that contains the menu and the content area.
     }
 
     .item a{
-    opacity:.7;
+    opacity:.90;
+
+	
+	
     }
 
     .panel > .header{
