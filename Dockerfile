@@ -14,7 +14,12 @@ ADD ps/ /root/
 
 
 # volumes
+
+RUN mkdir /Thumbs
+RUN mkdir /Pictures
+RUN chown www-data:www-data /Thumbs
 VOLUME /Thumbs /Pictures
+
 
 # expose ports
 EXPOSE 80
@@ -34,4 +39,3 @@ chmod +x /etc/my_init.d/* && \
 
 # remove install script for cleaner final image
 rm /root/install.sh
-
