@@ -18,6 +18,7 @@ ADD ps/ /root/
 RUN mkdir /Thumbs
 RUN mkdir /Pictures
 RUN chown www-data:www-data /Thumbs
+RUN chown www-data:www-data /Pictures
 VOLUME /Thumbs /Pictures
 
 
