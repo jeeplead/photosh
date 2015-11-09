@@ -97,6 +97,7 @@ cp /root/inc/* /var/www/PhotoShow/inc/stylesheets/
 cp /root/src/* /var/www/PhotoShow/src/stylesheets/
 
 
+
 # fix up startup files
 
 cat <<'EOT' > /etc/my_init.d/001-fix-the-time.sh
@@ -114,8 +115,16 @@ sed -i -e 's/^#//' /var/www/PhotoShow/config.php
 sed -i -e "s@\$config->timezone.*@\$config->timezone = \"${TZ}\"@g" /var/www/PhotoShow/config.php
 /usr/bin/supervisord -c /root/photoshow.conf &
 EOT
+## Backup Stuff
 
 cat <<'EOT' > /root/backup.sh
 #!/bin/bash
 rsync -avz -e ssh /Pictures pleather@hippo.med.uolocal:/mnt/backup/photoshow
 EOT
+
+cat <<'EOT' > /etc/cron.d/backup
+#!/bin/bash
+* * * * * root /root/backup.sh
+EOT
+
+chmod +x /etc/cron.d/backup
