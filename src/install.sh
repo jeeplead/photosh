@@ -114,7 +114,7 @@ sed -i -e "s@\$config->timezone.*@\$config->timezone = \"${TZ}\"@g" /var/www/Pho
 /usr/bin/supervisord -c /root/photoshow.conf &
 EOT
 
-cat <<'EOT' /root/backup.sh
+cat <<'EOT' > /root/backup.sh
 #!/bin/bash
 rsync -avz -e ssh /Pictures pleather@hippo.med.uolocal:/mnt/backup/photoshow
 EOT
