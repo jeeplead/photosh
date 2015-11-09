@@ -100,6 +100,7 @@ cp /root/src/* /var/www/PhotoShow/src/stylesheets/
 
 cat <<'EOT' > /etc/my_init.d/001-fix-the-time.sh
 #!/bin/bash
+TZ="America/New_York"
 if [[ $(cat /etc/timezone) != $TZ ]] ; then
   echo "$TZ" > /etc/timezone
  exec  dpkg-reconfigure -f noninteractive tzdata
@@ -111,4 +112,9 @@ cat <<'EOT' > /etc/my_init.d/002-start-stuff.sh
 sed -i -e 's/^#//' /var/www/PhotoShow/config.php
 sed -i -e "s@\$config->timezone.*@\$config->timezone = \"${TZ}\"@g" /var/www/PhotoShow/config.php
 /usr/bin/supervisord -c /root/photoshow.conf &
+EOT
+
+cat <<'EOT' /root/backup.sh
+#!/bin/bash
+rsync -avz -e ssh /Pictures pleather@hippo.med.uolocal:/mnt/backup/photoshow
 EOT
