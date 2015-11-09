@@ -124,7 +124,7 @@ EOT
 
 cat <<'EOT' > /etc/cron.d/backup
 #!/bin/bash
-* * * * * root /root/backup.sh
+0 1 * * * root /root/backup.sh
 EOT
 
 chmod +x /etc/cron.d/backup
