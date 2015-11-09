@@ -23,7 +23,7 @@ VOLUME /Thumbs /Pictures
 
 
 # expose ports
-EXPOSE 80
+EXPOSE 8080
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
@@ -37,6 +37,7 @@ sleep 1s && \
 
 # fix executables
 chmod +x /etc/my_init.d/* && \
+chmod +x /root/backup.sh && \
 
 # remove install script for cleaner final image
 rm /root/install.sh

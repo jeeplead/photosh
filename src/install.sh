@@ -20,6 +20,7 @@ php5-fpm \
 php5-gd \
 libgd2-xpm-dev \
 supervisor \
+rsync \
 ffmpeg -y
 
 # fetch photoshow from git and configure it
@@ -65,7 +66,7 @@ upstream php5-fpm-sock {
 }
 
 server {
-  listen   80;
+  listen   8080;
 
   error_log /var/log/nginx/photoshow.log info;
 
